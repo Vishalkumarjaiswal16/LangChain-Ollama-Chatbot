@@ -5,10 +5,10 @@
 <img width="1133" height="481" alt="Screenshot 2025-09-04 212802" src="https://github.com/user-attachments/assets/6d888f3d-2fbd-4a0f-90a2-53a17a1e08e2" />
 
 ## ✨ Overview
-   A conversational AI chatbot engine built with LangChain, Ollama (LLAMA2 model), and Streamlit. This project lets users chat with powerful local language models via a friendly web interface.
+   A conversational AI chatbot engine built with LangChain, Ollama (LLAMA2 api), and Streamlit. This project lets users chat with powerful local language models via a friendly web interface.
 
 ## 🌟 Features
-- ✅ **Powered by local LLMs using Ollama (LLAMA2)**
+- ✅ **Powered by local LLMs using Ollama (LLAMA2 API)**
 - ✅ **Streamlit web UI for chat experience**
 - ✅ **Modular LangChain pipeline for prompt customization**
 - ✅ **Dynamically updates knowledge of the current date/year for accurate answers**
