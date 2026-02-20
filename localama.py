@@ -9,7 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
+langchain_api_key = os.getenv("LANGCHAIN_API_KEY")
+if langchain_api_key:
+    os.environ["LANGCHAIN_API_KEY"] = langchain_api_key
 
 ## Prompt Template
 prompt = ChatPromptTemplate.from_messages(
@@ -23,8 +25,9 @@ prompt = ChatPromptTemplate.from_messages(
 st.title('Langchain Demo With LLAMA2 API')
 input_text = st.text_input("Search the topic u want")
 
-# ollama LLaMA2 LLM 
-llm = OllamaLLM(model="llama2")   # UPDATED construction
+# ollama LLM - use OLLAMA_MODEL in .env or run: ollama pull llama3.2
+model_name = os.getenv("OLLAMA_MODEL", "llama3.2")
+llm = OllamaLLM(model=model_name)
 output_parser = StrOutputParser()
 chain = prompt | llm | output_parser
 
